@@ -12,12 +12,8 @@ int main(int argc, char ** argv){
     stm32_pub = nh.advertise<serial_com::comm>("cameraData", 1);
     ros::Rate loop_rate(10);
     Radar radar;
-    radar.initframe();
     do{
         radar.getframe();
-
-        //cv::imshow("a",radar.frame);
-        cv::waitKey(10);
         radar.Radarwork();
         stm32_pub.publish(radar.g_msg);
 

@@ -70,6 +70,19 @@
         "set": "cpp",
         "string": "cpp",
         "string_view": "cpp",
-        "shared_mutex": "cpp"
-    }
+        "shared_mutex": "cpp",
+        "any": "cpp",
+        "bit": "cpp",
+        "charconv": "cpp",
+        "variant": "cpp"
+    },
+    "python.autoComplete.extraPaths": [
+        "/home/bili/Radar/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/bili/Radar/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.pythonPath": "/bin/python"
 }

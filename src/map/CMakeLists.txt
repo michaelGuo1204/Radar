@@ -41,9 +41,13 @@ include_directories(
 )
 aux_source_directory(src/mapcam CAM_SRC)
 aux_source_directory(src/mapwork WORK_SRC)
+aux_source_directory(src/background BKG_SRC)
+aux_source_directory(src/Armor ARM_SRC)
 add_executable(Frame Frame.cpp
   ${CAM_SRC}
   ${WORK_SRC}
+  ${BKG_SRC}
+  ${ARM_SRC}
 )
 add_dependencies(Frame ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(Frame

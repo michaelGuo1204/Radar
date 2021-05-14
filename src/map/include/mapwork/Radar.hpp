@@ -1,11 +1,13 @@
+#pragma once
 #include <iostream>
 #include<opencv2/opencv.hpp>
 #include <vector>
 #include "Locationtransform.h"
-#include "Gp.hpp"
-
+#include "../background/background.hpp"
 #include "serial_com/comm.h"
 #include "../mapcam/CameraCtl.hpp"
+#include "../Armor/LightMatch.hpp"
+#include "../Armor/ArmorPlate.hpp"
 class Radar{
     public:
         LocationTransform trans; // LocationTransform from CameraP to WorldP
@@ -13,21 +15,19 @@ class Radar{
         cv::Point WorldP; // 2d Position in world coordinate system
         cv::Mat gp; // Gaussian result
         cv::Mat frame; //origin mat 
-        Gp gmmbg; // Gaussian process
-        std::vector<bool> Isblues;
+        Background* backg;
+        std::vector<int> cars;
         std::vector<Point> WorldPs; // vector of WorldP
         serial_com::comm g_msg;
         // cm::CameraCtl cap;
         cv::VideoCapture cap;
+        LightMatch mch;
+        ArmorPlate amp;
     public:
         Radar();
         ~Radar(){;}
         void getframe();
         void initframe();
-
-        //use Gaussian to measure car position in camera coordinate system 
-        void GmmBackGround();
-
         void Radarwork();
         void initmsg(); //init g_msg
         void tomsg(); // transform WorldPs and Isblues to g_msg

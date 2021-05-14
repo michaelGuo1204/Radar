@@ -27,7 +27,7 @@ LocationTransform::LocationTransform(){
 
     std::string picture_path = model_path + "picture.png";
     ColorPicture=cv::imread(picture_path);
-    img=cv::imread(picture_path);
+    img=cv::imread(picture_path);//TODO:Image should got from cam 
     std::fstream fmatrix(model_path + "Mat.txt",std::ios::in);
     std::fstream f3d(model_path + "3D.txt",std::ios::in);
     for(int i=0;i<7;i++)    for(int j=0;j<3;j++)    for(int k=0;k<3;k++)
