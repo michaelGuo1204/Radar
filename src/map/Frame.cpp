@@ -15,10 +15,8 @@ int main(int argc, char ** argv){
     do{
         radar.getframe();
         radar.Radarwork();
+        radar.tomsg();
         stm32_pub.publish(radar.g_msg);
 
     } while(ros::ok());
-    
-
-
 }

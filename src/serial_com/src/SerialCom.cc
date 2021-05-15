@@ -54,7 +54,8 @@ void SerialCom::getBuffer(uint8_t *buffer, float x, float y, int cnt){
 //串口收发数据测试
 //此函数是subscriber的回调函数
 void SerialCom::infoExchange(const serial_com::comm::ConstPtr &msg){
-    uint8_t buffer[65];
+    std::cout<<"Received"<<std::endl;
+    uint8_t buffer[40];
     size_t num = 0;
     // serial_debug("Msg from Frame: x, y, z: %f, %f, %f\n", msg->x, msg->y, msg->z);
     // float _x = 0.0, _y = 0.0, _z = 0.0;
@@ -63,12 +64,8 @@ void SerialCom::infoExchange(const serial_com::comm::ConstPtr &msg){
     getBuffer(buffer, msg->x3, msg->y3, 16); 
     getBuffer(buffer, msg->x4, msg->y4, 24); 
     getBuffer(buffer, msg->x5, msg->y5, 32); 
-    getBuffer(buffer, msg->x6, msg->y6, 40); 
-    getBuffer(buffer, msg->x7, msg->y7, 48); 
-    getBuffer(buffer, msg->x7, msg->y7, 56);
-    buffer[64] = msg->color;
 
-    num = ser.write(buffer, 65);
+    num = ser.write(buffer, 40);
     ros_debug("Sent comm to serial port. %lu bits.", num);
 }
 

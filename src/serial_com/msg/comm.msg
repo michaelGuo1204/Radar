@@ -8,10 +8,3 @@ float32 x4
 float32 y4
 float32 x5
 float32 y5
-float32 x6
-float32 y6
-float32 x7
-float32 y7
-float32 x8
-float32 y8
-uint8 color

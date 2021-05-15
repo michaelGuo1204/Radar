@@ -3,7 +3,17 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/src/armor/include",
+                "${workspaceFolder}/src/serial_com/include",
+                "${workspaceFolder}/src/car_model/include",
+                "${workspaceFolder}/devel/include",
+                "/opt/ros/melodic/include",
+                "/opt/libtorch/include",
+                "/opt/libtorch/include/torch/csrc/api/include",
+                "/usr/include",
+                "/usr/include/eigen3",
+                "/usr/local/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.0.2)
 project(map)
+## Torch 需要至少C++14进行编译
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -16,6 +19,11 @@ find_package(OpenCV REQUIRED)
 if(NOT OpenCV_FOUND)
    message(FATAL_ERROR "OpenCV > 3 not found.")
 endif()
+
+find_package(Torch REQUIRED
+            NO_MODULE
+            PATHS /opt/libtorch/
+            NO_DEFAULT_PATH)
 
 catkin_package(
   INCLUDE_DIRS include
@@ -43,16 +51,19 @@ aux_source_directory(src/mapcam CAM_SRC)
 aux_source_directory(src/mapwork WORK_SRC)
 aux_source_directory(src/background BKG_SRC)
 aux_source_directory(src/Armor ARM_SRC)
+aux_source_directory(src/Reco REC_SRC)
 add_executable(Frame Frame.cpp
   ${CAM_SRC}
   ${WORK_SRC}
   ${BKG_SRC}
   ${ARM_SRC}
+  ${REC_SRC}
 )
 add_dependencies(Frame ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(Frame
   MvCameraControl
   libMvCameraControl.so
+  ${TORCH_LIBRARIES}
   ${catkin_LIBRARIES}
   ${OpenCV_LIBS}
 )
