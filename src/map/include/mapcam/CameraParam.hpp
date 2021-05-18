@@ -27,8 +27,8 @@ enum BITRATE
 
 struct CameraParam
 {
-    const int Width = 1440;                     //The width
-    const int Height = 1080;                    //The height
+    const int Width = 2048;                     //The width
+    const int Height = 3072;                    //The height
     const int Fps = 166;                        //Frames per second(Maximum frame rate)
     const int nMsec = 1000;                     //Period of waiting for graph
     ///TODO:此处好像不能自动曝光

@@ -74,7 +74,10 @@
         "any": "cpp",
         "bit": "cpp",
         "charconv": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "hash_map": "cpp",
+        "hash_set": "cpp",
+        "slist": "cpp"
     },
     "python.autoComplete.extraPaths": [
         "/home/bili/Radar/devel/lib/python3/dist-packages",

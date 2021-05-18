@@ -67,29 +67,29 @@ CameraCtl::CameraCtl() {
         printf("MV_CC_OpenDevice failed! nRet [%x]\n", nRet);
         return;
     }
-    nRet = MV_CC_SetHeight(handle, Default_Param.Height);
-    nRet = MV_CC_SetWidth(handle, Default_Param.Width);
-    if (MV_OK!=nRet)
-    {
-        printf("MV_CC_SetSize failed! nRet [%x]\n", nRet);
-        return;
-    }
+    // nRet = MV_CC_SetHeight(handle, Default_Param.Height);
+    // nRet = MV_CC_SetWidth(handle, Default_Param.Width);
+    // if (MV_OK!=nRet)
+    // {
+    //     printf("MV_CC_SetSize failed! nRet [%x]\n", nRet);
+    //     return;
+    // }
 
-    //设置帧率
-    nRet = MV_CC_SetFrameRate(handle, Default_Param.Fps);
-    if (MV_OK != nRet)
-    {
-        printf("MV_CC_SetFrameRate failed! nRet [%x]\n", nRet);
-        return;
-    }
+    // //设置帧率
+    // nRet = MV_CC_SetFrameRate(handle, Default_Param.Fps);
+    // if (MV_OK != nRet)
+    // {
+    //     printf("MV_CC_SetFrameRate failed! nRet [%x]\n", nRet);
+    //     return;
+    // }
 
-    //设置曝光时间
-    nRet = MV_CC_SetExposureTime(handle, Default_Param.Exposure_Time);
-    if (MV_OK != nRet)
-    {
-        printf("MV_CC_SetExposureTime failed! nRet [%x]\n", nRet);
-        return;
-    }
+    // //设置曝光时间
+    // nRet = MV_CC_SetExposureTime(handle, Default_Param.Exposure_Time);
+    // if (MV_OK != nRet)
+    // {
+    //     printf("MV_CC_SetExposureTime failed! nRet [%x]\n", nRet);
+    //     return;
+    // }
 
     //设置增益模式,使用固定值增益，不进行自动增益
     //nRet = MV_CC_SetGainMode(handle, Default_Param.Gain_Mode);

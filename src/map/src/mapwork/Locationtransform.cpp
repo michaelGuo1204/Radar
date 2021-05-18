@@ -84,11 +84,11 @@ cv::Point LocationTransform::solve(cv::Point before){
     for(int i=0;i<7;i++)
         if(color[i][0]==b&&color[i][1]==g&&color[i][2]==r){
             ThisColor=i;
-            std::cout<<ThisColor<<std::endl;
+            //std::cout<<ThisColor<<std::endl;
             break;
         }
     if(ThisColor==-1){
-        std::cout<<"It beyond the boundary."<<std::endl;
+        //std::cout<<"It beyond the boundary."<<std::endl;
         return cv::Point(0,0);
     }
     after.x=
